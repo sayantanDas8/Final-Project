@@ -1,0 +1,54 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="border: none;">
+        <h3 class="modal-title" id="exampleModalLabel2">Register</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="register" (ngSubmit)="submitData()">
+            <div class="mb-3">
+                <label for="exampleInputText2" class="form-label">First Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" formControlName="first_name" id="exampleInputText2" aria-describedby="emailHelp">
+                <ng-container *ngIf="register.get('first_name')?.touched && register.get('first_name')?.hasError('required')">
+                  <p style="color: red;">* required field</p>
+                </ng-container>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputText2" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" formControlName="last_name" id="exampleInputText2" aria-describedby="emailHelp">
+                <ng-container *ngIf="register.get('last_name')?.touched && register.get('last_name')?.hasError('required')">
+                  <p style="color: red;">* required field</p>
+                </ng-container>
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail2" class="form-label">Email Address <span style="color: red;">*</span></label>
+              <input type="email" class="form-control" formControlName="email" id="exampleInputEmail2" aria-describedby="emailHelp">
+              <ng-container *ngIf="register.get('email')?.touched && register.get('email')?.hasError('required')">
+                <p style="color: red;">* required field</p>
+              </ng-container>
+              <ng-container *ngIf="register.get('email')?.touched && register.get('email')?.hasError('pattern')">
+                <p style="color: red;">Pattern doesnot matched</p>
+              </ng-container>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword2" class="form-label">Password <span style="color: red;">*</span></label>
+              <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+              <ng-container *ngIf="register.get('password')?.touched && register.get('password')?.hasError('required')">
+                <p style="color: red;">* required field</p>
+              </ng-container>
+              <ng-container *ngIf="register.get('password')?.hasError('pattern')">
+                <p style="color: red;">Pattern doesnot matched</p>
+              </ng-container>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputFile2" class="form-label">Profile Picture</label>
+                <input type="file" class="form-control" (change)="onFileSelection($event)" id="exampleInputFile2" aria-describedby="emailHelp">
+              </div>
+              <div class="modal-footer" style="border: none;">
+                <input type="submit" class="btn btn-warning btn-lg col-6" value="Register" data-bs-dismiss="modal">
+                <p>Already have an account? <a data-bs-toggle="modal" data-bs-target="#exampleModal1">Sign in</a></p>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div>

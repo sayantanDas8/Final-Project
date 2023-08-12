@@ -1,0 +1,29 @@
+<div>
+  <div class="search">
+    <form class="d-flex col-lg-6" role="search" id="search" #searchValue="ngForm" (ngSubmit)="afterSearch(searchValue)">
+      <input class="form-control fs-5" type="search" placeholder="Search your vehicle name" name="searchItem" ngModel #searchItem="ngModel">
+      <input class="btn btn-danger fs-5" type="submit" value="Search">
+    </form>
+  </div>
+  <ng-container *ngIf="prodLen > 0; else notFound">
+      <div class="container my-5">
+        <div class="row">
+          <ng-container *ngFor="let a of product">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 mb-sm-5">
+              <div class="card text-center">
+                <img src="{{a.itemImg}}" class="card-img-top" alt="{{a.item_id}}">
+                <div class="card-body">
+                  <h5>{{a.item_id}}</h5>
+                  <p class="card-text" style="color: red;">{{a.price}}</p>
+                  <a routerLink="details/{{a.item_id}}" class="btn btn-primary">View Details</a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+  </ng-container>
+  <ng-template #notFound>
+    <h1 class="text-danger text-center">No Item Found</h1>
+  </ng-template>
+</div>

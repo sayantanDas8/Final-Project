@@ -1,0 +1,27 @@
+@mixin container($bg,$mt,$mr,$mb,$ml,$h){
+    background-color: $bg;
+    // margin-top: $mt;
+    // margin-right: $mr;
+    // margin-bottom: $mb;
+    // margin-left: $ml;
+    // height: $h;
+}
+
+.container{
+    // @include container(white, 25px , 50px , auto , 200px , auto);
+    @include container(white, auto , 50px , auto , 110px , auto);
+    owl-carousel-o{
+        .card{
+            // transform: (1.5);
+            transition: transform .2s;
+            // margin: 12px auto;
+            margin: auto;
+        }
+        .card:hover{
+            -ms-transform: scale(1.05); /* IE 9 */
+            -webkit-transform: scale(1.05); /* Safari 3-8 */
+            transform: scale(1.05); 
+            
+        }
+    }
+}

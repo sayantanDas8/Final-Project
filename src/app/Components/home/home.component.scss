@@ -1,0 +1,53 @@
+.heading{
+    font-size: 300%;
+    color: white;
+    // text-shadow: 5px 5px black;
+    padding-top: 35%;
+}
+.carousel-item img{
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: 75vh;
+    object-fit: contain;
+}
+.background{
+    background-image: url('~/src/assets/home10.jpg');
+    height: 90vh;
+    // height: 100%;
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.container{
+    text-align: center;
+}
+
+@mixin container($bg,$mt,$mr,$mb,$ml,$h){
+    background-color: $bg;
+    // margin-top: $mt;
+    // margin-right: $mr;
+    // margin-bottom: $mb;
+    // margin-left: $ml;
+    // height: $h;
+}
+
+.container1{
+    // @include container(white, 25px , 50px , auto , 200px , auto);
+    @include container(white, 25px , 50px , auto , 150px , auto);
+    font-size: small;
+}
+.card-group{
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        img{
+            height: 60px;
+            object-fit: contain;
+        }
+    }
+}

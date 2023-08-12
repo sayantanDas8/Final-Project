@@ -1,0 +1,26 @@
+@import '../../CssVariable/common';
+.vehicleBanner{
+    background: url('~/src/assets/home9.jpg');
+    width: auto;
+    // height: 75vh;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;   
+    position:relative; 
+    
+    .heading{
+        // background-color: aqua;
+        h1{
+            color: white;
+            font-size: 70px;
+            text-align: center;
+            margin: 5px 8px 450px 30px;
+            text-shadow: 5px 5px black;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+}

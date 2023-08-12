@@ -1,0 +1,19 @@
+@import './CssVariable/common';
+
+.nav-item{
+    font-size: larger;
+}
+.navbar-brand{
+    font-size: 20px;
+    background-color: $blueDark;
+    color: white;
+    padding: 1% 1% 1% 1%;
+    // padding: 0% 0% 0% 0%;
+    border-radius: 15px 15px 15px 15px;
+    img{
+        font-size: large;
+    }
+}
+.bi-person-circle{
+    font-size: 18px;
+}

@@ -1,0 +1,33 @@
+.aboutBanner{
+    background: url('~/src/assets/banner.jpg');
+    width: auto;
+    height: 75vh;
+    // height: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;    
+    align-items: center;
+    position: relative;
+    h1{
+        color: white;
+        width: 50%;
+        font-size: 50px;
+        span{
+            color: rgb(240, 164, 24);
+            font-size: 70px;
+        }
+    }
+}
+.row{
+    margin: auto;
+    width: 65%;
+}
+.image{
+    margin-left: 30%;
+    margin-bottom: 10px;
+}
+.img{
+    img{
+        margin: 5px auto 5px 4.5%;
+    }
+}

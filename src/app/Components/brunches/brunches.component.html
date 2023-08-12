@@ -1,0 +1,19 @@
+<!-- <p>brunches works!</p> -->
+
+<div class="container my-5">
+  <div class="row">
+    <ng-container *ngFor="let b of brunches">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-3 mb-sm-5">
+        <div class="card text-center">
+          <div class="card-header bg-info">
+            <h5>{{b.State}}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-title"><i class="bi bi-geo-alt text-danger"></i> {{b.address}}</p>
+            <p class="card-text"><i class="bi bi-envelope text-info"></i> {{b.email}}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

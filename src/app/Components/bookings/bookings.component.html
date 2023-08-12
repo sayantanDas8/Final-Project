@@ -1,0 +1,40 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="border: none;">
+        <h3 class="modal-title" id="exampleModalLabel3">Make a booking</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="booking" (ngSubmit)="submitData()">
+          <div class="mb-3">
+            <label for="exampleInputEmail" class="form-label">Enter Your Color <span style="color: red;">*</span></label>
+              <select class="form-select" aria-label="Default select example" formControlName="color">
+                <option>{{detail.color1}}</option>
+                <option>{{detail.color2}}</option>
+                <option>{{detail.color3}}</option>
+              </select>
+              <ng-container *ngIf="booking.get('color')?.touched && booking.get('color')?.hasError('required')">
+                <p style="color: red;">* required field</p>
+              </ng-container>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Advance Payment <span style="color: red;">*</span></label>
+            <input type="text" class="form-control" id="exampleInputPassword3" formControlName="advance">
+            <ng-container *ngIf="booking.get('advance')?.touched">
+              <ng-container *ngIf="booking.get('advance')?.hasError('required')">
+                <p style="color: red;">* required field</p>
+              </ng-container>
+              <ng-container *ngIf="booking.get('advance')?.hasError('pattern')">
+                <p style="color: red;">You have to pay atleast thousand Rupees</p>
+              </ng-container>
+            </ng-container>
+          </div>
+  
+          <div class="modal-footer" style="border: none;">
+            <input type="submit" value="Book" class="btn btn-warning btn-lg col-6" data-bs-dismiss="modal">
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>

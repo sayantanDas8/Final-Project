@@ -1,0 +1,97 @@
+<div class="background">
+    <span>&nbsp;</span>
+    <div class="container1">
+        <h2>{{detail.model_name}} <span class="text-success">({{detail.company}})</span></h2>
+        <span class="fs-5 text-warning"><i class="bi bi-star-fill"></i> Rating {{detail.rating}}</span>
+    </div>
+    <div class="container2">
+        <div class="row">
+            <div class="col" id="image">
+                <img src="{{detail.itemImg}}" class="card-img-top" alt="{{detail.model_name}}">
+                    <button class="btn btn-secondary btn-sm mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">View Image</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title" style="font-size: 30px;" id="exampleModalLabel">{{detail.model_name}}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="carouselExample" class="carousel slide">
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <img src="{{detail.itemImg1}}" class="d-block w-100" alt="{{detail.model_name}}">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="{{detail.itemImg2}}" class="d-block w-100" alt="{{detail.model_name}}">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="{{detail.itemImg3}}" class="d-block w-100" alt="{{detail.model_name}}">
+                                      </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-5">
+                <h2 style="color: red">{{detail.price}}</h2>
+                <p>{{detail.desc}}</p>
+                <button class="btn btn-lg bg-warning" data-bs-toggle="modal"
+                data-bs-target="#exampleModal3" (click)="onBooking(detail)">Book Now</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <app-bookings></app-bookings>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <h3>{{detail.model_name}} Summary</h3>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Color</th>
+                    <td>{{detail.color}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Engine Capacity</th>
+                    <td>{{detail.engine_capacity}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Mileage</th>
+                    <td>{{detail.mileage}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Transmission</th>
+                    <td>{{detail.transmission}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Kerb Weight</th>
+                    <td>{{detail.kerb_weight}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Fuel Tank Capacity</th>
+                    <td>{{detail.fuel_tank_capacity}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Seat Height / Seat Capacity</th>
+                    <td>{{detail.seat_height}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <span>&nbsp;</span>
+</div>

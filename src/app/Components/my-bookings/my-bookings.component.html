@@ -1,0 +1,41 @@
+<div class="background">
+    <span>&nbsp;</span>
+    <div class="container1">
+      <div class="card mb-3 my-3" style="max-width: 910px;">
+        <h1 class="text-center">My Bookings</h1>
+      </div>
+        
+    </div>
+    <ng-container *ngIf="filterBook.length>0; else elseBlock">
+      <div class="container2">
+        <ng-container *ngFor="let b of filterBook">
+            <div class="card mb-3 my-3" style="max-width: 910px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="{{b.itemImg}}" class="card-img-top" alt="...">
+                  </div>
+                  <div class="col-md-6 py-5">
+                    <div class="card-body">
+                      <h2 class="card-title">{{b.model_name}}</h2>
+                      <!-- <h2 class="card-title">{{b.id}}</h2> -->
+                      <h5 class="card-text" style="color: red;">{{b.price}} <span class="card-text" style="color: green;">(₹ {{b.advance}} <strong class="card-text" style="color: black;">Advance</strong>)</span></h5>
+                      <p class="card-text text-warning "><i class="bi bi-star-fill"></i> {{b.rating}}</p>
+                      <strong class="card-text fs-5"><span class="text-danger">Choosed Color- </span>{{b.color}}</strong>
+                      <!-- <p class="card-text"><small class="text-body-secondary"></small></p> -->
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button class="btn btn-danger" (click)="onCancel(b.id)">Cancel Booking</button>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+    </div>
+    </ng-container>
+    <ng-template #elseBlock>
+      <div class="container">
+      <img class="card-img-top" src="assets/empty.jpg" height="150" width="800" alt="">
+      </div>
+    </ng-template>
+    <span>&nbsp;</span>
+</div>

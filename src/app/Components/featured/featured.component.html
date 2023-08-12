@@ -1,0 +1,62 @@
+<div class="container py-4">
+    <div class="text-center">
+      <h3 class="py-4">Upcomming Versions</h3>
+    <div class="btn-group btn-group-toggle pb-4" data-toggle="buttons">
+      <button class="btn btn-danger px-5" autocomplete="off" (click)="clickBike()">Bike</button>
+
+      <button class="btn btn-primary px-5 mx-2" (click)="clickCar()" autocomplete="off">Car</button>
+    </div>
+    </div>
+    <!-- <hr> -->
+    <owl-carousel-o [options]="customOptions" *ngIf="viewBikes">
+        <ng-template carouselSlide *ngFor="let b of Bikes">
+            <!-- <div style="margin-left: 15px;"> -->
+              <div>
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="{{b.itemImg}}" class="card-img-top" alt="{{b.model_name}}">
+                    <div class="card-body">
+                      <h5>{{b.model_name}}</h5>
+                      <p class="card-text" style="color: red;">{{b.price}}</p>
+                      <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="before_notify"><i class="bi bi-whatsapp"></i> Notify After Launch</a>
+                      <a class="btn btn-success" data-bs-target="#exampleModal" *ngIf="after_notify"><i class="bi bi-whatsapp"></i> We will sent notification at {{b.collected_items}}</a>
+                    </div>
+                  </div>
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+    <owl-carousel-o [options]="customOptions" *ngIf="viewCars">
+      <ng-template carouselSlide  *ngFor="let c of Cars">
+          <!-- <div style="margin-left: 15px;"> -->
+            <div>
+              <div class="card text-center" style="width: 18rem;">
+                  <img src="{{c.itemImg}}" class="card-img-top" alt="{{c.model_name}}">
+                  <div class="card-body">
+                    <h5>{{c.model_name}}</h5>
+                      <p class="card-text" style="color: red;">{{c.price}}</p>
+                      <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="before_notify"><i class="bi bi-whatsapp"></i> Notify After Launch</a>
+                      <a class="btn btn-success" data-bs-target="#exampleModal" *ngIf="after_notify"><i class="bi bi-whatsapp"></i> We will sent notification at {{c.collected_items}}</a>
+                  </div>
+                </div>
+          </div>
+      </ng-template>
+  </owl-carousel-o>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form [formGroup]="notify" (ngSubmit)="submitData()">
+          <div class="modal-header" style="border: none;">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Enter your whtatsapp Number</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <input type="text" class="form-control" id="exampleInputText" aria-describedby="emailHelp" formControlName="contact">
+          </div>
+          <div class="modal-footer" style="border: none;">
+            <input type="submit" value="Save" class="btn btn-success btn-lg">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

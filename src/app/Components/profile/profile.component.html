@@ -1,0 +1,17 @@
+<h1 class="text-center" style="font-size: 50px;">My Profile</h1>
+<div class="card mx-auto" style="max-width: 800px;">
+    <div class="row g-0">
+        <div class="col-md-5">
+            <img [src]='img_path' alt="profile" height="300">
+        </div>
+        <div class="col-md-7" style="margin-top: 70px;">
+            <div class="card-body">
+                <h4 class="card-title"><span class="text-danger">Name-</span> {{profile?.data.first_name}} {{profile?.data.last_name}}</h4>
+                <h5 class="card-text"><span class="text-danger">Email-</span> {{profile?.data.email}}</h5>
+                <div class="d-grid gap-2 col-6 mx-5 py-3">
+                    <button class="btn btn-lg bg-danger text-light" (click)="loggingOut()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

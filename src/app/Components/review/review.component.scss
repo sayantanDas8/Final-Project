@@ -1,0 +1,19 @@
+span{
+        font-size: medium;
+}
+.card{
+    border: none;
+    margin: auto 10%;
+    text-align: center;
+
+    img {
+        height: 150px;
+        object-fit: contain;
+    }
+    h5{
+        font-size: medium;
+    }
+}
+.collapse-button{
+    margin: auto auto auto 45%;
+}

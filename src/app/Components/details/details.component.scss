@@ -1,0 +1,74 @@
+// .d-flex{
+//     margin: 40px auto 90px auto;
+//     width: 70%;
+//     text-align: center;
+// }
+// .container{
+//     padding-top: 100px;
+// }
+$background: rgb(225, 218, 218);
+
+@mixin container($bg, $mt, $mr, $mb, $ml, $h) {
+    background-color: $bg;
+    margin-top: $mt;
+    margin-right: $mr;
+    margin-bottom: $mb;
+    margin-left: $ml;
+    height: $h;
+}
+
+.background {
+    background-color: $background;
+}
+
+.container1 {
+    @include container(white, auto, auto, auto, auto, auto);
+    width: 65%;
+    padding: 10px 15px
+}
+
+.container2 {
+    @include container(white, 15px, auto, auto, auto, auto);
+    width: 65%;
+    padding: 15px;
+
+    // .card-img-top:hover {
+    //     cursor: pointer;
+    //     opacity: .5;
+    // }
+
+    #image{
+        .btn-secondary {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+        }
+    }
+
+    #image:hover{
+        .btn-secondary {
+            display: block;
+        }
+        .card-img-top {
+            cursor: pointer;
+            opacity: .5;
+        }
+    }
+}
+
+.container3 {
+    @include container(white, 15px, auto, auto, auto, auto);
+    width: 65%;
+    padding: 10px 20px;
+
+    .table {
+        tbody {
+            tr {
+                th {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}

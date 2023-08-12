@@ -1,0 +1,39 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header" style="border: none;">
+      <h3 class="modal-title" id="exampleModalLabel1">Login</h3>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="signin" (ngSubmit)="submitData()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email Address <span style="color: red;">*</span></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email"
+            aria-describedby="emailHelp">
+            <ng-container *ngIf="signin.get('email')?.touched && signin.get('email')?.hasError('required')">
+              <p style="color: red;">* required field</p>
+            </ng-container>
+            <ng-container *ngIf="signin.get('email')?.touched && signin.get('email')?.hasError('pattern')">
+              <p style="color: red;">Pattern doesnot matched</p>
+            </ng-container>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password <span style="color: red;">*</span></label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+            <ng-container *ngIf="signin.get('password')?.touched && signin.get('password')?.hasError('required')">
+              <p style="color: red;">* required field</p>
+            </ng-container>
+            <ng-container *ngIf="signin.get('password')?.hasError('pattern')">
+              <p style="color: red;">Pattern doesnot matched</p>
+            </ng-container>
+        </div>
+
+        <div class="modal-footer" style="border: none;">
+          <input type="submit" value="Login" class="btn btn-warning btn-lg col-6" data-bs-dismiss="modal">
+          <p>Don't have any account? <a data-bs-toggle="modal" data-bs-target="#exampleModal2">Create one</a></p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
